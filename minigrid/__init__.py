@@ -21,6 +21,19 @@ except Exception:  # nosec
 
 
 def register_minigrid_envs():
+    # LavaLawn
+    # ----------------------------------------
+    register(
+        id='MiniGrid-LavaLawnS16-v0',
+        entry_point='minigrid.envs:LavaLawnEnv',
+        kwargs={"size":16},
+    )
+    register(
+        id='MiniGrid-LavaLawnS64-v0',
+        entry_point='minigrid.envs:LavaLawnEnv',
+        kwargs={"size":64},
+    )
+
     # BlockedUnlockPickup
     # ----------------------------------------
 

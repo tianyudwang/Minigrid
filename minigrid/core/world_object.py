@@ -292,3 +292,13 @@ class Box(WorldObj):
         # Replace the box by its contents
         env.grid.set(pos[0], pos[1], self.contains)
         return True
+
+class Lawn(WorldObj):
+    def __init__(self, color='forest_green'):
+        super().__init__('lawn', color)
+
+    def can_overlap(self):
+        return True
+
+    def render(self, img):
+        fill_coords(img, point_in_rect(0, 1, 0, 1), COLORS[self.color])
